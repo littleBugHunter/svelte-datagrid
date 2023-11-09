@@ -74,7 +74,7 @@ $: if (__mounted) setProp('grouping', grouping);
 
 const onEvent = (e) => {
   e.stopPropagation();
-  dispatch(e.type, e.detail);
+  dispatch(e.type, {__originalEvent:e, ...e.detail});
 };
 </script>
 
